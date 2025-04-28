@@ -4,23 +4,19 @@ import PackageDescription
 let package = Package(
     name: "MailCore2",
     platforms: [
+        .iOS(.v12),
         .macOS(.v11)
     ],
     products: [
         .library(
             name: "MailCore2",
             targets: ["MailCore2"]
-        )
+        ),
     ],
     targets: [
-        .target(
+        .binaryTarget(
             name: "MailCore2",
-            dependencies: [],
-            path: "Sources/MailCore2",
-            publicHeadersPath: "include/MailCore",
-            linkerSettings: [
-                .linkedLibrary("MailCore")
-            ]
+            path: "./MailCore2.xcframework"
         )
     ]
 )
